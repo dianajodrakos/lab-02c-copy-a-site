@@ -40,7 +40,7 @@ content {
 .parent-white {
     background: white;
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr minmax(500px, 1000px) 1fr;
     justify-content: center;
 }
 
@@ -48,7 +48,7 @@ content {
     background: #eee;
     border-top: 1px solid lightgray;
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr minmax(500px, 1000px) 1fr;
     justify-content: center;
     align-content: stretch;
 }
@@ -56,13 +56,15 @@ content {
 .parent-black {
     background: black;
     display: grid;
-    grid-template-columns: 1fr 1000px 1fr;
+    grid-template-columns: 1fr minmax(500px, 1000px) 1fr;
     justify-content: center;
     align-content: stretch;
 }
 
 header {
-    width: 1000px;
+    min-width: 500px;
+    flex-basis: 1000px;
+
     display: flex;
     justify-content: space-between;
     align-content: stretch;
@@ -71,16 +73,20 @@ header {
 }
 
 .nav {
-    padding: 10px;
+    padding: 12px;
 }
 
+.nav-left {
+    color: peru;
+}
 .nav-center {
     color: grey;
-    border: 2px solid lightgray;
+    border: 2px solid #eee;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    box-shadow: 1px 1px 2px #ddd;
 }
 
 .nav-right {
@@ -89,9 +95,10 @@ header {
 }
 
 .signup {
-    border: 2px solid lightgray;
+    border: 2px solid #eee;
     border-radius: 20px;
     padding: 7px;
+    box-shadow: 1px 1px 2px #ddd;
 }
 
 h2 {
@@ -111,7 +118,7 @@ h3 {
 .explore {
     grid-column: 2;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(250px, 500px) minmax(250px, 500px);
     justify-content: space-between;
     align-content: stretch;
     align-items:flex-start;
@@ -155,17 +162,14 @@ h3 {
 }
 
 .two-two {
-    width: 495px;
     height: 500px;
 }
 
 .one-one {
-    width: 242px;
     height: 245px;
 }
 
 .two-one {
-    width: 495px;
     height: 245px;
     grid-column: 1 / span 2;
 }
