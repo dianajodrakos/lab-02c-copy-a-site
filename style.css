@@ -16,12 +16,25 @@ h2, h3, p {
 }
 
 body {
+    font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
+}
+
+content {
     display: grid; 
     grid-template-rows: auto;
     grid-template-columns: 1;
     justify-content: stretch; 
     align-items: center;
-    font-family: "Lucida Grande", tahoma, verdana, arial, sans-serif;
+    padding-top: 90px;
+}
+
+.parent-header {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    margin: auto;
+    background: white;
+    justify-content: center;
 }
 
 .parent-white {
@@ -29,6 +42,15 @@ body {
     display: grid;
     grid-template-columns: 1fr 1000px 1fr;
     justify-content: center;
+}
+
+.parent-footer {
+    background: #eee;
+    border-top: 1px solid lightgray;
+    display: grid;
+    grid-template-columns: 1fr 1000px 1fr;
+    justify-content: center;
+    align-content: stretch;
 }
 
 .parent-black {
@@ -40,7 +62,7 @@ body {
 }
 
 header {
-    grid-column: 2;
+    width: 1000px;
     display: flex;
     justify-content: space-between;
     align-content: stretch;
@@ -167,3 +189,21 @@ h3 {
     gap: 10px;
 }
 
+
+.nav-foot {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.nav-foot-left {
+    font-size: .8rem;
+}
+
+.nav-foot-right {
+    display: flex;
+    flex-direction: row;
+}
